@@ -403,16 +403,19 @@
       .nav-links a { font-size: .95rem; }
       .hero-only {
         min-height: 100svh;
+        min-height: 100dvh;
         background-position: center top;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px 16px 24px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(18px, 4vw, 24px);
+        padding: clamp(96px, 16vw, 120px) 16px clamp(28px, 7vw, 52px);
       }
-      .top-title { width: 100%; }
+      .top-title { width: 100%; margin-top: 0; }
       .top-title h1 {
         font-size: clamp(1.45rem, 5.8vw, 2.5rem);
         letter-spacing: -0.055em;
         white-space: normal;
+        margin-bottom: 0.12em;
       }
       .bottom-message { width: 100%; padding: 18px; border-radius: 18px; }
       .bottom-message p { font-size: clamp(1rem, 3.5vw, 1.25rem); }
