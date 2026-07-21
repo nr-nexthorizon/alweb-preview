@@ -404,22 +404,35 @@
       }
       .nav-links a { font-size: .95rem; }
       .hero-only {
-        min-height: 100svh;
-        min-height: 100dvh;
-        background-position: center center;
-        justify-content: space-between;
-        gap: 24px;
-        padding: 28px 16px 32px;
+        min-height: calc(100svh - 67px);
+        min-height: calc(100dvh - 67px);
+        display: grid;
+        grid-template-rows: minmax(200px, 1fr) auto auto;
+        align-items: stretch;
+        gap: 14px;
+        padding: 16px 16px 22px;
+        background-size: 0 0;
       }
-      .top-title { width: 100%; margin: 0; }
+      .hero-only::before {
+        content: '';
+        display: block;
+        width: 100%;
+        min-height: 0;
+        background-image: inherit;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: calc(100% - 20px) auto;
+      }
+      .top-title { width: 100%; min-width: 0; margin: 0; align-self: center; }
       .top-title h1 {
         font-size: clamp(1.45rem, 5.8vw, 2.5rem);
         letter-spacing: -0.055em;
         white-space: normal;
+        max-width: 100%;
         margin-bottom: 0.12em;
       }
-      .bottom-message { width: 100%; padding: 18px; border-radius: 18px; }
-      .bottom-message p { font-size: clamp(1rem, 3.5vw, 1.25rem); }
+      .bottom-message { width: 100%; min-width: 0; padding: 14px 16px; border-radius: 18px; }
+      .bottom-message p { font-size: clamp(.95rem, 3.5vw, 1.15rem); }
       .hero-buttons { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; min-height: 48px; }
     }
@@ -432,7 +445,7 @@
     }
 
     @media (max-width: 420px) {
-      .top-title h1 { font-size: 1.35rem; letter-spacing: -0.065em; }
+      .top-title h1 { font-size: 1.16rem; line-height: 1.08; letter-spacing: 0; }
       .section-header h2 { font-size: clamp(1.55rem, 7vw, 2rem); }
       .btn { min-height: 46px; padding: 13px 16px; font-size: .95rem; }
     }
