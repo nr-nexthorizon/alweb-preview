@@ -40,6 +40,7 @@
       justify-content: space-between;
       padding: 14px 20px;
       background: rgba(7, 11, 15, .82);
+      -webkit-backdrop-filter: blur(14px);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
@@ -169,6 +170,7 @@
       background: rgba(0, 0, 0, .38);
       border: 1px solid rgba(255,255,255,.18);
       box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(3px);
       backdrop-filter: blur(3px);
       border: 1px solid rgba(255,255,255,.2);
     }
@@ -404,13 +406,12 @@
       .hero-only {
         min-height: 100svh;
         min-height: 100dvh;
-        background-position: center top;
-        justify-content: flex-end;
-        align-items: center;
-        gap: clamp(18px, 4vw, 24px);
-        padding: clamp(96px, 16vw, 120px) 16px clamp(28px, 7vw, 52px);
+        background-position: center center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 28px 16px 32px;
       }
-      .top-title { width: 100%; margin-top: 0; }
+      .top-title { width: 100%; margin: 0; }
       .top-title h1 {
         font-size: clamp(1.45rem, 5.8vw, 2.5rem);
         letter-spacing: -0.055em;
